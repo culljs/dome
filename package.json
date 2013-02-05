@@ -1,0 +1,31 @@
+{
+    "name": "dome",
+    "humanName": "Dome",
+    "version": "0.0.1",
+    "main": "./lib/dome",
+    "description": "A functional-ish DOM manipulation library.",
+    "author": { "name": "Christian Johansen and Magnar Sveen" },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/culljs/dome.git"
+    },
+    "homepage": "https://github.com/culljs/dome",
+    "scripts": {
+        "test": "./node_modules/.bin/buster-static"
+    },
+    "engines": {
+        "node": "~0.6"
+    },
+    "dependencies": {
+        "culljs": "~0.0"
+    },
+    "devDependencies": {
+        "buster": "~0.6",
+        "buster-lint": "~0",
+        "cull-build-tools": "~0.0"
+    },
+    "keywords": [
+        "JavaScript",
+        "functional"
+    ]
+}

@@ -1,0 +1,7 @@
+#!/usr/bin/env node
+require("cull-build-tools").buildDocs(
+    ["lib/dome.js"],
+    ["test/dome-test.js"],
+    "readme-template.md",
+    "README.md"
+);

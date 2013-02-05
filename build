@@ -1,0 +1,2 @@
+#!/usr/bin/env node
+require("cull-build-tools").build("dome", ["lib/dome.js"]);
