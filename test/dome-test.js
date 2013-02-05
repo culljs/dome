@@ -32,7 +32,7 @@ buster.testCase("Dome", {
             assert.equals(divs[2].className, "meh heh hola");
         },
 
-        "does not duplicate class name for element in seq": function () {
+        "does not duplicate class name for element in list": function () {
             var divs = [
                 { className: "hey" },
                 { className: "" },
