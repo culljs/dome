@@ -64,6 +64,18 @@ buster.testCase("DOM events", {
             click(this.el.firstChild);
 
             assert.calledOn(handler, this.el.firstChild);
+        },
+
+        "delegates events based on target class name": function () {
+            this.el.appendChild(dome.el("a", { className: "some" }));
+            var handler = this.spy();
+            dome.delegate.bycn("some", this.el, "click", handler);
+
+            click(this.el.firstChild);
+            refute.called(handler);
+
+            click(this.el.lastChild);
+            assert.calledOnce(handler);
         }
     }
 });
