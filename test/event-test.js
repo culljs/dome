@@ -28,7 +28,7 @@ buster.testCase("DOM events", {
 
         "calls delegate with target element": function () {
             var delegator = this.spy();
-            dome.delegate("click", delegator, function () {}, this.el);
+            dome.delegate(delegator, this.el, "click", function () {});
 
             click(this.el.firstChild);
 
@@ -39,7 +39,7 @@ buster.testCase("DOM events", {
         "does not call handler if delegator returns falsy": function () {
             var delegator = this.stub().returns(false);
             var handler = this.spy();
-            dome.delegate("click", delegator, handler, this.el);
+            dome.delegate(delegator, this.el, "click", handler);
 
             click(this.el.firstChild);
 
@@ -49,7 +49,7 @@ buster.testCase("DOM events", {
         "calls handler if delegator returns truthy": function () {
             var delegator = this.stub().returns(true);
             var handler = this.spy();
-            dome.delegate("click", delegator, handler, this.el);
+            dome.delegate(delegator, this.el, "click", handler);
 
             click(this.el.firstChild);
 
@@ -59,7 +59,7 @@ buster.testCase("DOM events", {
         "calls handler with target as this": function () {
             var delegator = this.stub().returns(true);
             var handler = this.spy();
-            dome.delegate("click", delegator, handler, this.el);
+            dome.delegate(delegator, this.el, "click", handler);
 
             click(this.el.firstChild);
 
