@@ -1,7 +1,7 @@
 {
     "name": "dome",
     "humanName": "Dome",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "main": "./lib/dome",
     "description": "A functional-ish DOM manipulation library.",
     "author": { "name": "Christian Johansen and Magnar Sveen" },
@@ -22,7 +22,7 @@
     "devDependencies": {
         "buster": "~0.6",
         "buster-lint": "~0",
-        "cull-build-tools": "~0.0"
+        "cull-build-tools": "*"
     },
     "keywords": [
         "JavaScript",
