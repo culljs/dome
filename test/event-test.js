@@ -21,6 +21,17 @@ buster.testCase("DOM events", {
         assert.calledOnce(handler);
     },
 
+    "deregisters listener by calling .off": function () {
+        var handler = this.spy();
+        var el = dome.el("button");
+        var subscription = dome.on(el, "click", handler);
+        subscription.cancel();
+
+        click(el);
+
+        refute.called(handler);
+    },
+
     "delegation": {
         setUp: function () {
             this.el = dome.el("div", [dome.el("a")]);
