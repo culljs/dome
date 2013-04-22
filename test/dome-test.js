@@ -61,7 +61,13 @@ buster.testCase("Dome", {
         "removes matching class": function () {
             var div = { className: "hey something there" };
             dome.cn.rm("something", div);
-            assert.equals(div.className, "hey there");
+            assert.equals(div.className, "hey  there");
+        },
+
+        "removes all matching classes": function () {
+            var div = { className: "hey hey something there hey" };
+            dome.cn.rm("hey", div);
+            assert.equals(div.className, "something there");
         },
 
         "removes matching class when last": function () {
