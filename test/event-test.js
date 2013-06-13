@@ -88,5 +88,14 @@ buster.testCase("DOM events", {
             click(this.el.lastChild);
             assert.calledOnce(handler);
         }
+    },
+
+    "custom events": function () {
+        dome.events.weird = sinon.spy();
+        var element = dome.el("div");
+        var handler = function () {};
+        dome.on(element, "weird", handler);
+
+        assert.calledOnceWith(dome.events.weird, element, handler);
     }
 });
