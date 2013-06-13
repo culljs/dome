@@ -147,5 +147,27 @@ buster.testCase("Dome", {
 
             refute.equals(id, id2);
         }
+    },
+
+    "contains": {
+        "returns true for parent/child": function () {
+            var parent = dome.el("div", [dome.el("div")]);
+            var child = parent.firstChild;
+
+            assert(dome.contains(parent, child));
+        },
+
+        "returns true for grand parent/child": function () {
+            var gp = dome.el("div", [dome.el("div", [dome.el("div")])]);
+            var child = gp.firstChild.firstChild;
+
+            assert(dome.contains(gp, child));
+        },
+
+        "returns false for grand siblings": function () {
+            var parent = dome.el("div", [dome.el("div"), dome.el("div")]);
+
+            refute(dome.contains(parent.firstChild, parent.lastChild));
+        }
     }
 });
