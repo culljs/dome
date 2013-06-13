@@ -128,5 +128,24 @@ buster.testCase("Dome", {
 
             assert.equals(dome.text(el), "Hey\nThere");
         }
+    },
+
+    "uuid": {
+        "sets and returns id": function () {
+            var object = {};
+            var id = dome.uuid(object);
+
+            assert.equals(id, dome.uuid(object));
+            assert.isNumber(id);
+        },
+
+        "uses unique ids": function () {
+            var object = {};
+            var object2 = {};
+            var id = dome.uuid(object);
+            var id2 = dome.uuid(object2);
+
+            refute.equals(id, id2);
+        }
     }
 });
