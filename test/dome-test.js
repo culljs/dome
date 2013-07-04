@@ -169,5 +169,36 @@ buster.testCase("Dome", {
 
             refute(dome.contains(parent.firstChild, parent.lastChild));
         }
+    },
+
+    "replace": {
+        "replaces element": function () {
+            var parent = dome.el("div", [dome.el("div")]);
+            var placeholder = parent.firstChild;
+            var el = dome.replace(placeholder, dome.el("p"));
+
+            assert.tagName(el, "p");
+            refute.same(parent.firstChild, placeholder);
+        },
+
+        "does nothing if element has no parent": function () {
+            var element = dome.el("div", [dome.el("div")]);
+            var el = dome.replace(element, dome.el("p"));
+
+            assert.tagName(el, "p");
+        },
+
+        "replaces correct element": function () {
+            var element = dome.el("div", [
+                dome.el("div"),
+                dome.el("div"),
+                dome.el("div")
+            ]);
+            var el = dome.replace(element.childNodes[1], dome.el("p"));
+
+            assert.tagName(element.childNodes[0], "div");
+            assert.tagName(element.childNodes[1], "p");
+            assert.tagName(element.childNodes[2], "div");
+        }
     }
 });
