@@ -36,6 +36,13 @@ buster.testCase("Element", {
             dome.setProp({ data: { something: "hey" } }, el);
 
             assert.equals(el.getAttribute("data-something"), "hey");
+        },
+
+        "sets type before value": function () {
+            var el = document.createElement("input");
+            dome.setProp({ value: "yo", type: "radio" }, el);
+
+            assert.equals(el.getAttribute("value"), "yo");
         }
     },
 
