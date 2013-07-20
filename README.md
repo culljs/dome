@@ -9,13 +9,16 @@ our API design and the general underlying philosophy.
 
 * [children](#children-elements) `(elements)`
 * [id](#id-idStr) `(idStr)`
-* [get](#get-selectors-parent) `(selectors, parent)`
+* [byClass](#byClass-className-parent) `(className, parent)`
 * [remove](#remove-element) `(element)`
+* [replace](#replace-element-replacement) `(element, replacement)`
 * [hasClassName](#hasClassName-className-element) `(className, element)`
 * [addClassName](#addClassName-cn-element) `(cn, element)`
 * [removeClassName](#removeClassName-cn-element) `(cn, element)`
 * [text](#text-elm) `(elm)`
 * [frag](#frag-items) `(items)`
+* [uuid](#uuid-object) `(object)`
+* [contains](#contains-element-child) `(element, child)`
 * [setData](#setData-data-element) `(data, element)`
 * [getData](#getData-property-element) `(property, element)`
 * [setProp](#setProp-properties-element) `(properties, element)`
@@ -40,7 +43,7 @@ our API design and the general underlying philosophy.
 
 ```
 
-### get `(selectors, parent)`
+### byClass `(className, parent)`
 
 
 
@@ -54,6 +57,19 @@ our API design and the general underlying philosophy.
 
 ```js
 
+```
+
+### replace `(element, replacement)`
+
+
+
+```js
+var parent = dome.el("div", [dome.el("div")]);
+var placeholder = parent.firstChild;
+var el = dome.replace(placeholder, dome.el("p"));
+
+assert.tagName(el, "p");
+refute.same(parent.firstChild, placeholder);
 ```
 
 ### hasClassName `(className, element)`
@@ -100,6 +116,29 @@ var frag = dome.frag();
 assert.equals(frag.nodeType, 11);
 ```
 
+### uuid `(object)`
+
+
+
+```js
+var object = {};
+var id = dome.uuid(object);
+
+assert.equals(id, dome.uuid(object));
+assert.isNumber(id);
+```
+
+### contains `(element, child)`
+
+
+
+```js
+var parent = dome.el("div", [dome.el("div")]);
+var child = parent.firstChild;
+
+assert(dome.contains(parent, child));
+```
+
 ### setData `(data, element)`
 
 
@@ -139,6 +178,12 @@ assert.equals(frag.nodeType, 11);
 ```js
 
 ```
+
+## Contributors
+
+- [Martin Solli](https://github.com/msolli) contributed bug fixes for Opera.
+
+Thanks!
 
 ## License
 

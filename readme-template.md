@@ -13,6 +13,12 @@ our API design and the general underlying philosophy.
 
 [[ function-docs ]]
 
+## Contributors
+
+- [Martin Solli](https://github.com/msolli) contributed bug fixes for Opera.
+
+Thanks!
+
 ## License
 
 Copyright © 2012-2013, Christian Johansen and Magnar Sveen. Dome
