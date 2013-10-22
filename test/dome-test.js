@@ -61,7 +61,7 @@ buster.testCase("Dome", {
         "removes matching class": function () {
             var div = { className: "hey something there" };
             dome.cn.rm("something", div);
-            assert.equals(div.className, "hey  there");
+            assert.equals(div.className, "hey there");
         },
 
         "removes all matching classes": function () {
@@ -86,6 +86,12 @@ buster.testCase("Dome", {
             assert.equals(divs[0].className, "");
             assert.equals(divs[1].className, "some thing eh");
             assert.equals(divs[2].className, "heh");
+        },
+
+        "supports class names with dashes": function () {
+            var div = { className: "yo-ho ho" };
+            dome.cn.rm("ho", div);
+            assert.equals(div.className, "yo-ho");
         }
     },
 
