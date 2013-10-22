@@ -4,17 +4,17 @@ buster.testCase("Element", {
     "data": {
         "sets data attribute and property": function () {
             var el = document.createElement("div");
-            dome.data.set({ something: 42 }, el);
+            dome.data.set({ something: "42" }, el);
 
-            assert.equals(el["data-something"], 42);
-            assert.equals(el.getAttribute("data-something"), 42);
+            assert.equals(el["data-something"], "42");
+            assert.equals(el.getAttribute("data-something"), "42");
         },
 
         "gets data attribute": function () {
             var el = document.createElement("div");
-            dome.data.set({ something: 42 }, el);
+            dome.data.set({ something: "42" }, el);
 
-            assert.equals(dome.data.get("something", el), 42);
+            assert.equals(dome.data.get("something", el), "42");
         }
     },
 

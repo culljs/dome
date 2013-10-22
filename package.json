@@ -20,7 +20,7 @@
         "culljs": "~0.2"
     },
     "devDependencies": {
-        "buster": "~0.6",
+        "buster": "~0.7",
         "buster-lint": "~0",
         "cull-build-tools": "*"
     },

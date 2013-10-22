@@ -175,17 +175,19 @@ buster.testCase("Dome", {
         "replaces element": function () {
             var parent = dome.el("div", [dome.el("div")]);
             var placeholder = parent.firstChild;
-            var el = dome.replace(placeholder, dome.el("p"));
+            var replacement = dome.el("p");
+            dome.replace(placeholder, replacement);
 
-            assert.tagName(el, "p");
+            assert.same(parent.firstChild, replacement);
             refute.same(parent.firstChild, placeholder);
         },
 
         "does nothing if element has no parent": function () {
             var element = dome.el("div", [dome.el("div")]);
-            var el = dome.replace(element, dome.el("p"));
+            var replacement = dome.el("p");
+            dome.replace(element, replacement);
 
-            assert.tagName(el, "p");
+            assert.isNull(replacement.parentNode);
         },
 
         "replaces correct element": function () {
@@ -194,7 +196,7 @@ buster.testCase("Dome", {
                 dome.el("div"),
                 dome.el("div")
             ]);
-            var el = dome.replace(element.childNodes[1], dome.el("p"));
+            dome.replace(element.childNodes[1], dome.el("p"));
 
             assert.tagName(element.childNodes[0], "div");
             assert.tagName(element.childNodes[1], "p");

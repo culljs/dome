@@ -1,4 +1,4 @@
-/*global dome*/
+/*global dome, sinon */
 function click(element) {
     if (document.createEvent) {
         var event = document.createEvent("MouseEvents");
