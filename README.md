@@ -179,6 +179,28 @@ assert(dome.contains(parent, child));
 
 ```
 
+## Run tests
+
+Either:
+
+```sh
+./node_modules/.bin/buster-server
+```
+
+Hit [localhost:1111/capture](http://localhost:1111/capture) and then:
+
+```sh
+./node_modules/.bin/buster-test
+```
+
+**Or**
+
+```sh
+npm test
+```
+
+Then hit [localhost:8282](http://localhost:8282)
+
 ## Contributors
 
 - [Martin Solli](https://github.com/msolli) contributed bug fixes for Opera.
