@@ -1,7 +1,7 @@
 {
     "name": "dome",
     "humanName": "Dome",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "main": "./lib/dome",
     "description": "A functional-ish DOM manipulation library.",
     "author": { "name": "Christian Johansen and Magnar Sveen" },
