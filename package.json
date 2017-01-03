@@ -13,11 +13,8 @@
     "scripts": {
         "test": "./node_modules/.bin/buster-static"
     },
-    "engines": {
-        "node": "~0.6"
-    },
     "dependencies": {
-        "culljs": "~0.2"
+        "culljs": "~0.3.1"
     },
     "devDependencies": {
         "buster": "~0.7",
